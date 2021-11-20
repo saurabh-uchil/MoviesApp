@@ -26,6 +26,6 @@ const moviesRouter = require('./routes/movies')
 app.use('/',homepageRouter)
 app.use('/movies',moviesRouter)
 
-app.listen(PORT, ()=>{
-    console.log(`App is running on port ${PORT}`)
+app.listen(PORT, () => {
+    console.log(`App is listening at http://localhost:${PORT}`)
 })
