@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 
 //Port to listen
-const PORT = process.env.PORT
+const PORT = process.env.PORT || 3000
 
 //Middleware to parse req.body
 app.use(express.json())
@@ -22,9 +22,11 @@ app.use(morgan('dev'))
 //Routes
 const homepageRouter = require('./routes/homepage')
 const moviesRouter = require('./routes/movies')
+const loginRouter = require('./routes/userlogin')
 
 app.use('/',homepageRouter)
 app.use('/movies',moviesRouter)
+app.use('/userlogin', loginRouter)
 
 app.listen(PORT, () => {
     console.log(`App is listening at http://localhost:${PORT}`)
