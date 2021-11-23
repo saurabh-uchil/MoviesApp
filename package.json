@@ -4,16 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-<<<<<<< HEAD
     "dev": "nodemon -r dotenv/config index.js",
-=======
-
-  
-    "dev":"nodemon -r dotenv/config index.js",
     "create_db": "psql -U postgres -f sql/create_db.sql",
     "create_tables": "psql -U postgres -d movies_db -f sql/create_table.sql",
-
->>>>>>> d452766f872793a8404a41637e2015eb537bca0c
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
