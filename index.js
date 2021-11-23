@@ -23,10 +23,12 @@ app.use(morgan('dev'))
 const homepageRouter = require('./routes/homepage')
 const moviesRouter = require('./routes/movies')
 const loginRouter = require('./routes/userlogin')
+const registerRouter = require('./routes/userRegister')
 
 app.use('/',homepageRouter)
 app.use('/movies',moviesRouter)
 app.use('/userlogin', loginRouter)
+app.use('/userRegister', registerRouter)
 
 app.listen(PORT, () => {
     console.log(`App is listening at http://localhost:${PORT}`)
