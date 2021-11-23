@@ -11,7 +11,7 @@ DROP TABLE IF EXISTS movies;
 CREATE TABLE IF NOT EXISTS movies (
   movie_id SERIAL PRIMARY KEY,
   movie_title VARCHAR(255) NOT NULL,
-  movie_year INTEGER(4) NOT NULL,
+  movie_year INTEGER NOT NULL,
   movie_time INTEGER NOT NULL,
   movie_lang VARCHAR(255) NOT NULL,
   movie_rel DATE,
@@ -57,15 +57,14 @@ CREATE TABLE IF NOT EXISTS actor(
     lname VARCHAR(255) NOT NULL
 );
 
-DROP TABLE IF EXISTS cast;
-CREATE TABLE IF NOT EXISTS cast(
+DROP TABLE IF EXISTS moviecast;
+CREATE TABLE IF NOT EXISTS moviecast(
     actor_id INTEGER NOT NULL,
     movie_id INTEGER NOT NULL,
     role VARCHAR(255) NOT NULL,
     CONSTRAINT fk_actor
         FOREIGN KEY(actor_id)
-            REFERENCES actor(actor_id)
-            ON DELETE CASCADE,
+            REFERENCES actor(actor_id),
     CONSTRAINT fk_movies
         FOREIGN KEY(movie_id)
             REFERENCES movies(movie_id)
@@ -79,14 +78,13 @@ CREATE TABLE IF NOT EXISTS director(
     lname VARCHAR(255) NOT NULL
 );
 
-DROP TABLE IF EXISTS movie_directed;
-CREATE TABLE IF NOT EXISTS movie_directed(
+DROP TABLE IF EXISTS moviedirected;
+CREATE TABLE IF NOT EXISTS moviedirected(
     director_id INTEGER NOT NULL,
     movie_id INTEGER NOT NULL,
     CONSTRAINT fk_director
   FOREIGN KEY(director_id)
-    REFERENCES director(director_id)
-        ON DELETE CASCADE,
+    REFERENCES director(director_id),
     CONSTRAINT fk_movies
   FOREIGN KEY(movie_id)
     REFERENCES movies(movie_id)
