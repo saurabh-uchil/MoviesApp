@@ -50,7 +50,7 @@ body{
 </style>
 <div class="banner-area">
     
-<form class="content-area shadow p-3 mb-5 rounded">
+<form class="content-area shadow p-3 mb-5 rounded" method="GET" action="/">
     <h1 class="text-white">Create an Account</h1>
     <hr style="border: 1px solid gray;">
     <div class="content text-white">
@@ -68,6 +68,10 @@ body{
   <div class="content text-white">
     <label for="password" class="form-label">Password</label>
     <input type="password" class="form-control" id="password" style="width: 300px;">
+  </div>
+  <div class="content text-white">
+    <label for="confirmPassword" class="form-label">Confirm Password</label>
+    <input type="password" class="form-control" id="confirmPassword" style="width: 300px;">
   </div><br>
   <div class="registerButton text-center">
   <button type="submit" class="btn btn-info">Login</button>

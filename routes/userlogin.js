@@ -12,7 +12,7 @@ router.get('/',(req,res)=>{
 })
 
 // login a user
-router.post("/", redirectToHome, (req, res) => {
+router.post("/", (req, res) => {
     const { email, password } = req.body;
     const cleanedEmail = cleanEmail(email);
 
