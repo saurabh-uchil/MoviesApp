@@ -18,8 +18,8 @@ const cleanEmail = (email) => {
 };
 
 // display register form
-registerRoute.get("/", (req, res) => {
-  res.render("pages/register", {
+router.get("/", (req, res) => {
+  res.render("pages/userRegister", {
     title: 'Register Page'
 
 
