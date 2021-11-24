@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= title %></title>
-</head>
+    <%- include('../partials/head') %>
+    <!-- Css Link -->
+    <link rel="stylesheet" href="/css/style.css">
 <body>
-    <h1>Welcome to homepage!!...</h1>
+    <%- include('../partials/header') %>
+    <h1>Welcome to Our Movies App!!</h1>
+    <br>
+    <div class="movies"></div>
+    <script src="/js/movies.js"></script>
 </body>
 </html>
