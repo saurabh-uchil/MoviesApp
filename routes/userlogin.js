@@ -3,9 +3,11 @@ const bcrypt = require("bcryptjs");
 const db = require("../database");
 const router = express.Router();
 
-router.get('/', (req, res) => {
-    res.render('pages/userlogin', {
-        title: 'Login Page'
+router.get('/',(req,res)=>{
+    res.render('pages/userlogin',{
+        title:'Login Page'
+
+
     })
 })
 

@@ -1,24 +1,76 @@
 <%- include('../partials/header') %>
-    
-<!-- partial:index.partial.html -->
-<div id="login-form-wrap">
-    <h2>Login</h2>
-    <form id="login-form">
-      <p>
-      <input type="text" id="username" name="username" placeholder="Username" required><i class="validation"><span></span><span></span></i>
-      </p>
-      <p>
-      <input type="email" id="email" name="email" placeholder="Email Address" required><i class="validation"><span></span><span></span></i>
-      </p>
-      <p>
-      <input type="submit" id="login" value="Login">
-      </p>
-    </form>
-    <div id="create-account-wrap">
-      <p>Not a member? <a href="#">Create Account</a><p>
-    </div><!--create-account-wrap-->
-  </div><!--login-form-wrap-->
-  <!-- partial -->
+
+<style>
+  *{
+  padding:0;
+  margin:0;
+  box-sizing: border-box;
+}
+
+body{
+  background:#eee;
+  font-family:sans-serif;
+}
+
+.banner-area{
+  width:100%;
+  height:100vh;
+  background-image:linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(../images/backgroundImage1.jpg);
+  background-size:cover;
+}        
+
+.content-area {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#create-account {
+  background-color: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5));
+  color: #ffffff;
+  font-size: 14px;
+  width: 100%;
+  padding: 10px 0;
+  border-radius: 0 0 4px 4px;
+}
+
+#create-account> p > a{
+  text-decoration: none;
+  color: white;
+}
+
+#create-account> p > a:hover {
+  color: aquamarine;
+}
+
+.loginButton:hover {
+color: #a0d6e0;
+}
+</style>
+<div class="banner-area">
+<form class="content-area shadow p-3 mb-5 rounded">
+  <h1 class="text-white text-center">Login</h1>
+  <hr style="border: 1px solid gray;">
+  <div class="content text-white">
+    <label for="email" class="form-label">Email</label>
+    <input type="email" class="form-control" id="email" aria-describedby="email" style="width: 300px;">
+  </div>
+  <div class="content text-white">
+    <label for="password" class="form-label">Password</label>
+    <input type="password" class="form-control" id="password" style="width: 300px;">
+  </div><br>
+  <div class="loginButton text-center">
+  <button type="submit" class="btn btn-info">Login</button>
+</div>
+<hr style="border: 1px solid gray;">
+<div id="create-account">
+    <p>Not a member?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/userRegister">Create an Account</a><p>
+  </div>
+</form>
+</div>
 
 
   <%- include('../partials/footer') %>
+
+  
