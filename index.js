@@ -22,10 +22,19 @@ app.use(morgan('dev'))
 //Routes
 const homepageRouter = require('./routes/homepage')
 const moviesRouter = require('./routes/movies')
-const loginRouter = require('./routes/userlogin')
-const registerRouter = require('./routes/userRegister')
+
+const loginRouter = require('./routes/login')
+const registerRouter = require('./routes/register')
+
+app.use('/',homepageRouter)
+app.use('/movies',moviesRouter)
+app.use('/login',loginRouter)
+app.use('/register',registerRouter)
+
+
 
 //const logoutRouter = require("./routes/logout");
+
 
 
 app.use('/', homepageRouter)
