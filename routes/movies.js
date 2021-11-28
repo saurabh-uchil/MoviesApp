@@ -6,6 +6,8 @@ router.get('/:id',(req,res)=>{
         title:'Movies Page',
         movie_id: req.params.id
     })
-})
+
+
+
 
 module.exports = router
