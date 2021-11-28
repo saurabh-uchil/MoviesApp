@@ -3,10 +3,8 @@
     padding: 0;
 }
 
-nav{
+.bg-custom {
     background: #004966;
-    height: 60px;
-    width: 100%;
 }
 
 body{
@@ -18,35 +16,5 @@ h1{
     color: whitesmoke;
 }
 
-nav select{
-    height:45px;
-    width: 150px;
-    margin-left:30%;
-    margin-top: 10px;
-}
-
-nav input{
-    height:40px;
-    width: 300px;
-    margin-top: 10px;
-}
-
-nav button{
-    background-color: darkblue; 
-    background-image: linear-gradient(darkblue,blue); 
-    border:2px solid yellow; 
-    border-radius: 5px;
-    color:whitesmoke;
-    height:40px;
-    width: 100px;
-    margin-left:20px;
-}
-
-nav a{
-    color: white;
-    text-decoration: none;
-    margin: 50px;
-    font-size: 20px;
-}
 
 
