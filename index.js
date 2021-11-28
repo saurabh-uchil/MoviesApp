@@ -2,11 +2,11 @@ const express = require('express')
 const app = express()
 
 //Port to listen
-const PORT = process.env.PORT
+const PORT = process.env.PORT || 3000
 
 //Middleware to parse req.body
 app.use(express.json())
-app.use(express.urlencoded({extended: true}))
+app.use(express.urlencoded({ extended: true }))
 
 //For creating and using views
 app.set('view engine', 'ejs')
@@ -22,14 +22,26 @@ app.use(morgan('dev'))
 //Routes
 const homepageRouter = require('./routes/homepage')
 const moviesRouter = require('./routes/movies')
-const loginRouter = require('./routes/login')
-const registerRouter = require('./routes/register')
+const loginRouter = require('./routes/userlogin') //syed
+const registerRouter = require('./routes/userRegister') //syed
+//const loginRouter = require('./routes/login') //saurabh
+//const registerRouter = require('./routes/register') //saurabh
 
-app.use('/',homepageRouter)
-app.use('/movies',moviesRouter)
-app.use('/login',loginRouter)
-app.use('/register',registerRouter)
+//app.use('/',homepageRouter) //saurabh
+//app.use('/movies',moviesRouter)//saurabh
+//app.use('/login',loginRouter)//saurabh
+//app.use('/register',registerRouter)//saurabh
 
-app.listen(PORT, ()=>{
-    console.log(`App is running on port ${PORT}`)
+//const logoutRouter = require("./routes/logout"); for logging out
+
+
+
+app.use('/', homepageRouter)
+app.use('/movies', moviesRouter)
+app.use('/userlogin', loginRouter)
+app.use('/userRegister', registerRouter)
+
+
+app.listen(PORT, () => {
+    console.log(`App is listening at http://localhost:${PORT}`)
 })
